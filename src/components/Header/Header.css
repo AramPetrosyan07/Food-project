@@ -1,0 +1,15 @@
+.active{
+    color: red;
+}
+
+.Header {
+    background-color: gray;
+    font-size: 2rem;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+.Header a{
+    margin: 0 0.4rem;
+}
