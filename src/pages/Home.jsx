@@ -1,16 +1,11 @@
-import { useEffect, useState } from "react";
-import { getAllCategories } from "../api";
+import CategoryList from "../components/CategoryList/CategoryList";
 
 const Home = () => {
-  const [category, setCategory] = useState([]);
-
-  useEffect(() => {
-    getAllCategories().then((data) => {
-      console.log(data.categories);
-    });
-  }, []);
-
-  return <div>Home</div>;
+  return (
+    <div>
+      <CategoryList />
+    </div>
+  );
 };
 
 export default Home;

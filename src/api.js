@@ -16,4 +16,12 @@ const getMealById = async (id) => {
     return response.json();
 }
 
-export { getAllCategories, getFilteredCategory, getMealById };
+const getRandomMeal = async (id) => {
+    const response = await fetch('www.themealdb.com/api/json/v1/1/random.php');
+    return response.json();
+}
+
+
+
+
+export { getAllCategories, getFilteredCategory, getMealById, getRandomMeal };

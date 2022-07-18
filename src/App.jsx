@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Category from "./pages/Category";
 import Recipe from "./pages/Recipe";
+import Basket from "./components/BasketList/Basket";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/recipe/:id" element={<Recipe />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Basket />
       <Footer />
     </Router>
   );
