@@ -8,6 +8,7 @@ const ContextProvider = (props) => {
   const [meal, setMeal] = useState([]);
   const [load, setLoad] = useState(true);
   const [order, setOrder] = useState([]);
+  const [loadMeal, setLoadMeal] = useState(true);
 
   return (
     <Context.Provider
@@ -20,6 +21,8 @@ const ContextProvider = (props) => {
         setLoad,
         order,
         setOrder,
+        loadMeal,
+        setLoadMeal,
       }}
     >
       {props.children}

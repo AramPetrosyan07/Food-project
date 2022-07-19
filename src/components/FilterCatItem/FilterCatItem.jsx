@@ -3,9 +3,10 @@ import "./FilterCatItem.css";
 import { NavLink as Link } from "react-router-dom";
 import { getMealById } from "../../api";
 import { Context } from "../../Context";
+import Loading from "../../Loading/Loading";
 
 const FilterCatItem = ({ item }) => {
-  let { meal, setMeal, order, setOrder } = useContext(Context);
+  let { meal, setMeal, order, setOrder, loadMeal } = useContext(Context);
 
   const MealById = async (id) => {
     getMealById(id).then((data) => {
@@ -24,18 +25,28 @@ const FilterCatItem = ({ item }) => {
   };
 
   return (
-    <div className="FilterCatItem">
-      <img src={item.strMealThumb} alt="" onClick={() => addToOrder(item)} />
-      <div className="marginleft">
-        <Link
-          className="filterText"
-          to={`/recipe/:${item.idMeal}`}
-          onClick={() => MealById(item.idMeal)}
-        >
-          {item.strMeal}
-        </Link>
-      </div>
-    </div>
+    <>
+      {loadMeal ? (
+        <Loading />
+      ) : (
+        <div className="FilterCatItem">
+          <img
+            src={item.strMealThumb}
+            alt=""
+            onClick={() => addToOrder(item)}
+          />
+          <div className="marginleft">
+            <Link
+              className="filterText"
+              to={`/recipe/:${item.idMeal}`}
+              onClick={() => MealById(item.idMeal)}
+            >
+              {item.strMeal}
+            </Link>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

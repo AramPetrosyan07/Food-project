@@ -14,7 +14,6 @@ const Basket = () => {
 
   return (
     <>
-      {/* <div className="BasketBody"> */}
       <div className={bool ? "BasketBody" : "displayNone"}>
         <div className="basketPopup">
           {order.map((el, ind) => (

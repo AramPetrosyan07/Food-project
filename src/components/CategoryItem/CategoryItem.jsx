@@ -6,11 +6,12 @@ import { Context } from "../../Context";
 import Loading from "../../Loading/Loading";
 
 const CategoryItem = ({ el }) => {
-  let { filterCatalogy, setFilterCatalogy, load } = useContext(Context);
+  let { setFilterCatalogy, load, loadMeal, setLoadMeal } = useContext(Context);
 
   const filterCat = async (catName) => {
     getFilteredCategory(catName).then((data) => {
       setFilterCatalogy(data.meals);
+      setLoadMeal(false);
     });
   };
 

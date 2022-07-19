@@ -49,7 +49,7 @@
 
 .basketItem{
     width: 90%;
-    height: 140px;
+    height: 150px;
     margin: 0 auto;
     margin-top: 5px;
     font-family: "roboto";
@@ -58,13 +58,19 @@
     justify-content: space-between;
 }
 
+.itemLeft>p{
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+}
+
 .itemLeft>img{
     width: 100px;
     height: 100px;
 }
 
+
 .itemRight{
-    /* width: 100%; */
     height: 60px;
     position: relative;
     top: 35%;
@@ -103,7 +109,7 @@
 
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:600px) {
     .itemRight>button{
         width: 30px;
         height: 30px;
@@ -113,5 +119,13 @@
     .itemRight>span{
         margin-top: 2px;
         font-size: 20px;
+    }
+    .itemRight{
+        position: relative;
+        transform: translate(-20px, 0px);
+        right: 00px;
+        top: 70px;
+        display: flex;
+        flex-wrap: nowrap;
     }
 }
